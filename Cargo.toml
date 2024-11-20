@@ -1,0 +1,18 @@
+[package]
+name = "simple_mqm"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ndarray = "0.15" # handle multi-dimensional arrays
+ndarray-linalg = "0.15" # linear algebra operations on ndarray
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0" # serialization/deserialization if needed
+
+[lib]
+name = "simple_mqm"
+crate-type = ["cdylib"]
+
+[dependencies.pyo3] # PyO3 is a Rust binding for Python
+version = "0.18"
+features = ["extension-module"]
